@@ -1,0 +1,14 @@
+name: Every 5 mins
+on:
+  schedule:
+    - cron:  '0/5 * * * *'
+
+jobs:
+  phrase_pull:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/setup-python@v2
+        with:
+          python-version: '3.6'
+      - name: pip list
+        run: pip list
